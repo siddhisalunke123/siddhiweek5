@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using dotnetapp.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnetapp.Models
 {
@@ -10,6 +11,8 @@ namespace dotnetapp.Models
         {
         }
 
-        // Add DbSet properties for other entities as needed
+        public virtual DbSet<Player> Players{get;set;}
+ 
+        public virtual DbSet<Team> Teams{get;set;}
     }
 }
