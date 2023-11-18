@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using dotnetapp.Models;
 
-namespace dotnetapp.Models
-{
+namespace dotnetapp.Models;
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -14,4 +13,4 @@ namespace dotnetapp.Models
  
         public virtual DbSet<Team> Teams{get;set;}
     }
-}
+
