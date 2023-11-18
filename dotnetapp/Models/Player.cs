@@ -18,8 +18,8 @@ public class Player{
     public int TeamId{get; set;}
     public string Category{get; set;}
 
-    [Range(1,int.MaxValue,ErrorMessage="Bidding amount must be greater than 0.")]
-    public decimal BiddingAmount {get; set;} 
+    [Range(1,int.MaxValue,ErrorMessage="Bidding price must be greater than 0.")]
+    public decimal BiddingPrice {get; set;} 
 
     public Team Teams{get; set;}
 }

@@ -4,9 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using dotnetapp.Models;
 
-namespace dotnetapp.Controllers
-{
-    
+namespace dotnetapp.Controllers;
 
     public class UserController : ControllerBase
     {
@@ -19,4 +17,3 @@ namespace dotnetapp.Controllers
 
         
     }
-}
