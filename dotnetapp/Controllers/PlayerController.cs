@@ -1,18 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+using dotnetapp.Models;
 namespace dotnetapp.Controllers;
-
-  
     public class PlayerController : Controller
     {
-
-
         public IActionResult Index()
         {
             return View();
