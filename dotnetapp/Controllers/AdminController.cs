@@ -48,6 +48,7 @@ namespace dotnetapp.Controllers
             }
             else return NotFound();
         }
+        [HttpGet]
         public IActionResult DeletePlayer(int id)
         {
             var e= db.Players.FirstOrDefault(e=>e.Id==id);
