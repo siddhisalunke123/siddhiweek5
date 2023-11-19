@@ -8,24 +8,23 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PlayerController : ControllerBase
     {
-        // private readonly ILogger<PlayerController> _logger;
-
-        // public PlayerController(ILogger<PlayerController> logger)
-        // {
-        //     _logger = logger;
-        // }
         private readonly ApplicationDbContext db;
  
         public PlayerController(ApplicationDbContext context)
         {
             db = context;
         }
-
-
-     
  
+        public IActionResult Login(User user){
+           
+            return Ok();
+        }
+        public IActionResult Register(User user){
+           
+            return Ok();
+        }
     }
 }
