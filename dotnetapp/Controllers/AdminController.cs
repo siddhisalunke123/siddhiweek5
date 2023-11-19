@@ -33,6 +33,7 @@ namespace dotnetapp.Controllers
             return Ok(db.Teams);
         }
         [HttpPut]
+        // [Route("{id}")]
         public IActionResult PutPlayer(int id, Player pl)
         {
             var e=db.Players.FirstOrDefault(e=>e.Id==id);
@@ -49,6 +50,7 @@ namespace dotnetapp.Controllers
             else return NotFound();
         }
         [HttpGet]
+        
         public IActionResult DeletePlayer(int id)
         {
             var e= db.Players.FirstOrDefault(e=>e.Id==id);
