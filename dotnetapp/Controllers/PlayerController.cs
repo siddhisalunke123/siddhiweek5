@@ -1,16 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
 using dotnetapp.Models;
-namespace dotnetapp.Controllers;
-    public class PlayerController : Controller
+ 
+namespace dotnetapp.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class PlayerController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext db;
+ 
+        public PlayerController(ApplicationDbContext context)
         {
-            return View();
+            db = context;
         }
 
-        
+        public IActionResult Login(User user){
+           
+            return Ok();
+        }
+        public IActionResult Register(User user){
+           
+            return Ok();
+        }
+ 
     }
+}
