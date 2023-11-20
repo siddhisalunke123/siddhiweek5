@@ -17,11 +17,14 @@ namespace dotnetapp.Controllers
         {
             db = context;
         }
- 
+        [HttpGet]
+        [Route("LoginUser")]
         public IActionResult Login(User user){
            
             return Ok();
         }
+        [Route("RegisterUser")]
+        [HttpGet]
         public IActionResult Register(User user){
            
             return Ok();
