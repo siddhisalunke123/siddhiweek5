@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
-import { observable } from 'rxjs';
-
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import { HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IPlayer } from '../model/iplayer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerserviceService {
 
-  constructor() { }
+  private url='https://8080-abafbabeebcfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin/'
+
+  constructor(private httpclient:HttpClient) {  }
+
+  getPlayer():Observable<any[]>
+  {
+    return this.httpclient.get<any[]>(this.url+'/ListMovies')
+  }
+  getPlayer(id:number):Observable<IPlayer>{
+    return this.httpclient.get<IPlayer>(this.url +'/ListMovies/'+id);
+  }
 
 }
