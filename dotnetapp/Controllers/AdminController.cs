@@ -31,8 +31,17 @@ namespace dotnetapp.Controllers
             return Ok(data);
         }
  
+ [HttpGet]
+  [Route("GetPlayer/{id}")]
  
-       
+        public IActionResult GetPlayers(int id)
+        {
+            var data=context.Players.Find(id);
+            if(data!=null){
+            return Ok(data);
+            }
+            return BadRequest();
+        }
  
         [HttpPut]
         [Route("EditPlayer")]
@@ -97,8 +106,7 @@ namespace dotnetapp.Controllers
  
             return Created("Record Added", p); //
         }
-        ///////////////////////////////////////////////////////////////////////////
- 
+        
         [HttpGet]
         [Route("GetTeams")]
         public IActionResult GetTeams(int id)
