@@ -13,12 +13,12 @@ export class PlayerserviceService {
 
   constructor(private httpclient:HttpClient) {  }
 
-  getPlayer():Observable<any[]>
-  {
-    return this.httpclient.get<any[]>(this.url+'/ListMovies')
-  }
-  getPlayer(id:number):Observable<IPlayer>{
-    return this.httpclient.get<IPlayer>(this.url +'/ListMovies/'+id);
-  }
+  // getPlayer():Observable<any[]>
+  // {
+  //   return this.httpclient.get<any[]>(this.url+'/GetPlayer')
+  // }
+  // getPlayer(id:number):Observable<IPlayer>{
+  //   return this.httpclient.get<IPlayer>(this.url +'/GetPlayer/'+id);
+  // }
 
 }
