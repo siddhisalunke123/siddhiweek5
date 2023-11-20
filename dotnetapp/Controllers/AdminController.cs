@@ -34,7 +34,7 @@ namespace dotnetapp.Controllers
  [HttpGet]
   [Route("GetPlayer/{id}")]
  
-        public IActionResult GetPlayers(int id)
+        public IActionResult GetPlayersbyid(int id)
         {
             var data=context.Players.Find(id);
             if(data!=null){
