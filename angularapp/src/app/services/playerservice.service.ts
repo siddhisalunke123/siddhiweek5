@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from '../../model/iplayer';
+import { Player } from 'src/model/player';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,10 @@ export class PlayerserviceService {
 
   constructor(private httpclient:HttpClient) {  }
 
-  // getPlayer():Observable<any[]>
-  // {
-  //   return this.httpclient.get<any[]>(this.url+'/GetPlayer')
-  // }
+  getPlayer():Observable<any[]>
+  {
+    return this.httpclient.get<any[]>(this.url+'/GetPlayer')
+  }
   // getPlayer(id:number):Observable<IPlayer>{
   //   return this.httpclient.get<IPlayer>(this.url +'/GetPlayer/'+id);
   // }
