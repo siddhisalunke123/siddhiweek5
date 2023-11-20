@@ -7,7 +7,8 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
    
- 
+    [Route("/[controller]")]
+    [ApiController]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -18,29 +19,24 @@ namespace dotnetapp.Controllers
         }
  
         [HttpGet]
- 
-        [Route("ListTeam")]
-        public IActionResult Get()
+        [Route("RegisterUser")]
+        public IActionResult Register(User u)
         {
-            var data=from m in context.Teams select m;
+            var data=context.Users.Add(u);
             return Ok(data);
         }
  
-        [HttpPost]
-        [Route("UserLogin")]
  
-        public IActionResult Login() {
+        [Route("Login")]
+        [HttpGet]
+        public IActionResult Login(User U) {
+            if(ModelState.IsValid){
+                var data=context.Users.FirstOrDefault(u=>u.Name==U.Name && u.password==U.password);
+                return RedirectToAction("Login",U);
+            }
             return Ok();
+           
         }
- 
-        [HttpPost]
-        [Route("UserRegister")]
-        public IActionResult Register() {
-            return Ok();
-        }
- 
- 
- 
        
     }
 }

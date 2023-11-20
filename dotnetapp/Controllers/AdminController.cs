@@ -23,122 +23,153 @@ namespace dotnetapp.Controllers
         }
  
         [HttpGet]
+        [Route("GetPlayer")]
  
-        [Route("ListTeam")]
-        public IActionResult Get()
+        public IActionResult GetPlayers()
         {
-            var data=from m in context.Teams select m;
+            var data=context.Players.ToList();
             return Ok(data);
         }
  
-        [HttpGet]
  
-        [Route("ListTeam/{id}")]
-        public IActionResult Get(int id)
-        {
-            // var data=context.Teams.ToList();
-            if(id==null)
-            {
-                return BadRequest("Id cannot be null");
-            }
-            var data=(from m in context.Teams where m.TeamId==id select m).FirstOrDefault();
-            // var data=context.Teams.Find(id);
-            if(data==null)
-            {
-                return NotFound($"Movie {id} not found");
-            }
-            return Ok(data);
-           
-        }
-        [HttpPost]
-        [Route("AddTeam")]
-        public IActionResult Post(Team Team)
-        {
-            if(ModelState.IsValid)
-            {
-                try{
-                    context.Teams.Add(Team);
-                    context.SaveChanges();
+       
  
-                }
-                catch(System.Exception ex){
-                    return BadRequest(ex.InnerException.Message);
- 
-                }
-            }
-            return Created("Record Added",Team);
- 
-        }
         [HttpPut]
-        [Route("EditTeam/{id}")]
-        public IActionResult Put(int id, Team Team)
+        [Route("EditPlayer")]
+        public IActionResult PutPlayer(int id, Player player)
         {
+            try
+            {
+ 
             if(ModelState.IsValid)
             {
-                Team mv = context.Teams.Find(id);
-                mv.TeamName = Team.TeamName;
+                Player p = new Player{};
+                Player e = context.Players.Find(id);
+                e.Name = player.Name;
+                e.Age = player.Age;
+                e.Category = player.Category;
+                e.BiddingPrice = player.BiddingPrice;
                 context.SaveChanges();
                 return Ok();
-               
- 
- 
- 
             }
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+ 
             return BadRequest("Unable to Edit Record");
         }
-        [HttpDelete]
-        [Route("DeleteTeam/{id}")]
-        public IActionResult Delete(int id)
-        {
  
-                var data=context.Teams.Find(id);
-                context.Teams.Remove(data);
+        [HttpDelete]
+        [Route("DeletePlayer")]
+        public IActionResult DeletePlayer(int id)
+        {
+            try
+            {
+                var data = context.Players.Find(id);
+                context.Players.Remove(data);
                 context.SaveChanges();
                 return Ok();
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
  
-           
+            }
         }
  
         [HttpPost]
         [Route("AddPlayer")]
-        public IActionResult Post(Player Player)
+        public IActionResult Post(Player p)
         {
             if(ModelState.IsValid)
             {
                 try{
-                    context.Players.Add(Player);
+                    context.Players.Add(p);
                     context.SaveChanges();
- 
                 }
-                catch(System.Exception ex){
+                catch(SystemException ex)
+                {
                     return BadRequest(ex.InnerException.Message);
- 
                 }
             }
-            return Created("Record Added",Player);
  
+            return Created("Record Added", p); //
+        }
+        ///////////////////////////////////////////////////////////////////////////
+ 
+        [HttpGet]
+        [Route("GetTeams")]
+        public IActionResult GetTeams(int id)
+        {
+            var data=context.Teams.ToList();
+            return Ok(data);  
         }
  
         [HttpPut]
-        [Route("EditPlayer/{id}")]
-        public IActionResult PutPlayer(int id, Player Player)
+        [Route("EditTeam")]
+        public IActionResult PutTeam(int id, Team t)
         {
+            try
+            {
+ 
             if(ModelState.IsValid)
             {
-                Player mv = context.Players.Find(id);
-                mv.Name = Player.Name;
-                mv.Age = Player.Age;
-                mv.Category = Player.Category;
-                mv.BiddingPrice = Player.BiddingPrice;
+                // Team t = new Team{};
+                Team e = context.Teams.Find(id);
+                e.TeamName = t.TeamName;
                 context.SaveChanges();
                 return Ok();
-               
- 
- 
- 
             }
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+ 
             return BadRequest("Unable to Edit Record");
         }
  
+ 
+        [HttpDelete]
+        [Route("DeleteTeam")]
+        public IActionResult DeleteTeam(int id)
+        {
+            try
+            {
+                var data = context.Teams.Find(id);
+                context.Teams.Remove(data);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+ 
+            }
+        }
+ 
+        [HttpPost]
+        [Route("AddTeam")]
+        public IActionResult PostTeam(Team t)
+        {
+            if(ModelState.IsValid)
+            {
+                try{
+                    context.Teams.Add(t);
+                    context.SaveChanges();
+                }
+                catch(SystemException ex)
+                {
+                    return BadRequest(ex.InnerException.Message);
+                }
+            }
+ 
+            return Created("Record Added", t); //
+        }
+ 
     }
+ 
+ 
 }
