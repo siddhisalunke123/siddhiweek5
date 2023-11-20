@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from '../model/iplayer';
+import { IPlayer } from '../../model/iplayer';
 
 @Injectable({
   providedIn: 'root'

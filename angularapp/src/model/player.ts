@@ -5,5 +5,4 @@ age : number
 teamid : string
 category : string
 biddingprice : number
-
 }

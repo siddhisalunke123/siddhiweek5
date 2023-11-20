@@ -1,4 +1,4 @@
 export class Team {
     teamid : number
-teamname : string
+    teamname : string
 }
