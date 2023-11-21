@@ -8,10 +8,10 @@ import { AdminService } from '../services/admin.service';
 })
 export class AdminComponent implements OnInit {
 
-  t:any[]=[]
+  teamdata:any[]=[]
   constructor(private as : AdminService) {
-    this.as.getTeams().subscribe(data=>{this.t.push(...data)})
-    console.log(this.t)
+    this.as.getTeams().subscribe(data=>{this.teamdata.push(...data)})
+    console.log(this.teamdata)
    }
 
   ngOnInit() {
