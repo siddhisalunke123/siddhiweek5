@@ -20,5 +20,11 @@ export class AdminService {
   {
     return this.httpclient.get<any[]>(this.url1+'/GetTeams')
   }
+
+  httpOptions={headers:new HttpHeaders ({'Content-type':'application/json'})}
+  createTeam(t: Team):Observable<Team>
+  {
+    return this.httpclient.post<Team>(this.url1 +'/AddTeam/',t,this.httpOptions);
+  }
   
 }
