@@ -1,4 +1,5 @@
 export class Team {
-    teamid : number
-    teamname: string
+    id : number
+    name: string
+    maximumBudget : number
 }
