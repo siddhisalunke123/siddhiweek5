@@ -13,7 +13,7 @@ export class PlayerserviceService {
 
   constructor(private httpclient:HttpClient) {  }
 
-  getPlayer():Observable<any[]>
+  getPlayers():Observable<any[]>
   {
     return this.httpclient.get<any[]>(this.url+'/GetPlayer')
   }
