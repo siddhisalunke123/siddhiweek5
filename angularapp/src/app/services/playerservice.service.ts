@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from 'src/model/player.model';
+import { Player } from 'src/models/player.model';
 
 @Injectable({
   providedIn: 'root'
