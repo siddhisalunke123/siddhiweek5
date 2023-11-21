@@ -9,8 +9,8 @@ import { AdminService } from '../services/admin.service';
 export class AdminComponent implements OnInit {
  t:any[]=[]
   constructor(private as:AdminService) {
-    this.as.getPlayers().subscribe(data=>{this.moviedata.push(...data)})
-    console.log(this.moviedata)
+    this.as.getPlayers().subscribe(data=>{this.t.push(...data)})
+    console.log(this.t)
    }
 
   ngOnInit() {
