@@ -1,14 +1,17 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace dotnetapp.Models;
-    public class Team
-    {
-       [Key]
-        public int TeamId{get; set;}
-        public string TeamName {get; set;}
-        public ICollection<Player> ?Players {get; set;}
-    }
+namespace dotnetapp.Models
+{
+
+public class Team{
+    [Key]
+    public int Id{get;set;}
+    public string TeamName{get;set;}
+
+    public int maximumBudget{get;set;}
+    public ICollection<Player> ?Players{get;set;}
+}
+
+}

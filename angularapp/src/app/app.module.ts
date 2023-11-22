@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { DeleteplayerComponent } from './deleteplayer/deleteplayer.component';
 import { DeleteTeamComponent } from './delete-team/delete-team.component';
 import { ServicesComponent } from './services/services.component';
+import { ListItemsComponent } from './list-items/list-items.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ServicesComponent } from './services/services.component';
     MenuComponent,
     DeleteplayerComponent,
     DeleteTeamComponent,
-    ServicesComponent
+    ServicesComponent,
+    ListItemsComponent
   ],
   imports: [
     BrowserModule,

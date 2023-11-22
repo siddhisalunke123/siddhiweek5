@@ -7,36 +7,38 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
    
-    [Route("/[controller]")]
-    [ApiController]
+    // [ApiController]
+    // [Route("/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext context;
  
-        public UserController(ApplicationDbContext _context)
+        public UserController(ApplicationDbContext context)
         {
-            context = _context;
+            this.context = context;
         }
  
-        [HttpGet]
-        [Route("RegisterUser")]
         public IActionResult Register(User u)
         {
-            var data=context.Users.Add(u);
-            return Ok(data);
+            context.Users.Add(u);
+            context.SaveChanges();
+            return RedirectToAction("Login");
+ 
+           
+ 
         }
- 
- 
-        [Route("Login")]
-        [HttpGet]
-        public IActionResult Login(User U) {
-            if(ModelState.IsValid){
-                var data=context.Users.FirstOrDefault(u=>u.Name==U.Name && u.password==U.password);
+        public IActionResult Login(User U)
+        {
+            if(ModelState.IsValid)
+            {
+                var user=context.Users.FirstOrDefault(u=>u.Name==U.Name && u.password==U.password);
                 return RedirectToAction("Login",U);
             }
             return Ok();
            
         }
+ 
+ 
        
     }
 }
