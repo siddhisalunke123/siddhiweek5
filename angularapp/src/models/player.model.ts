@@ -4,5 +4,5 @@ export class Player {
     age : number
     teamid : number
     category : string
-    biddingprice : number
+    biddingPrice : number
 }
