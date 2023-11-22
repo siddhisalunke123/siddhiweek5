@@ -14,6 +14,7 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
+import { AddTeamComponent } from './add-team/add-team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { DeletePlayerComponent } from './delete-player/delete-player.component';
     EditPlayerComponent,
     MenuComponent,
    
-    DeletePlayerComponent
+    DeletePlayerComponent,
+   
+    AddTeamComponent
   ],
   imports: [
     BrowserModule,

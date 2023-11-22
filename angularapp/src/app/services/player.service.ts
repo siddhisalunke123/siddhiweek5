@@ -1,33 +1,24 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpErrorResponse,HttpHeaders} from  '@angular/common/http';
-import { Observable } from 'rxjs';
+import {HttpClient,HttpErrorResponse,HttpHeaders} from "@angular/common/http";
 import { Player } from '../../models/player.model';
-import { Team } from '../../models/team.model';
+import { Observable } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
-   
-
-  private url1 = "https://8080-abfbbcbcacdfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin"
-  constructor(private httpclient :HttpClient) { }
-
-  playerdata : Player[]
-  teamData : Team[]
-
-  httpOptions = {headers : new HttpHeaders({'content-type':'application/json'})}
-   //httpOptions = {headers: new HttpHeaders({'content-type':'application/json'})}
-
-  getPlayers():Observable<Player[]>
-  {
-    return this.httpclient.get<Player[]>(this.url1+'/ShowPlayers');
-  }
-  getTeams():Observable<Team[]>
-  {
-    return this.httpclient.get<Team[]>(this.url1+'/ShowTeam');
-  }
-  AddPlayer(player :Player):Observable<Player>{
-    return this.httpclient.post<Player>(this.url1+'/AddPlayer',player,this.httpOptions);
+  private url= "https://8080-abdddcaefddefefacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin"
+  
+  constructor(private httpclient:HttpClient) { }
+  getPlayers():Observable<Player[]>{
+   return this.httpclient.get<Player[]>(this.url + '/GetPlayers')
   }
 
+  httpOptions={headers:new HttpHeaders({'content-type':'application/json'})}
+
+  addPlayer(player:Player):Observable<Player>{
+    return this.httpclient.post<Player>(this.url+'/AddPlayer',player,this.httpOptions)
+  }
+  
 }
