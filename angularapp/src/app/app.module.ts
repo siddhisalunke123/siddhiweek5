@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 
-import { LoginComponent } from './login/login.component';
+
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { AddPlayersComponent } from './add-players/add-players.component';
 import { ListPlayersComponent } from './list-players/list-players.component';
@@ -24,14 +24,10 @@ import { PlayerComponent } from './player/player.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     HomeComponent,
     AddTeamComponent,
     DeletePlayerComponent,
-  
-    LoginComponent,
     EditPlayerComponent,
-
     AddPlayersComponent,
     ListPlayersComponent,
     ListTeamComponent,

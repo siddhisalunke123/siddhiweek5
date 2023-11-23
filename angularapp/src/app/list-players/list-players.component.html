@@ -1,1 +1,51 @@
-<p>list-players works!</p>
+[7:23 PM] Rudrani Basvrajappa Rode
+<div>
+    <form [formGroup] = "teamform">
+        <div>
+            <label for="teamName">Name</label>
+            <input type="text" id="teamName" name="teamName" formControlName="teamName" class="form-control">
+        </div>
+ 
+        <div>
+            <label for="maximumBudget">Maximum Budget</label>
+            <input type="number" id="maximumBudget" name="maximumBudget" formControlName="maximumBudget" class="form-control">
+        </div>
+ 
+        <p>
+            <button type="submit" (click)="onSave()"  class="btn btn-success">Save</button>
+        </p>
+ 
+    </form>
+</div>
+[7:27 PM] Rudrani Basvrajappa Rode
+<div class="jumbotron">
+    <h1 class="text-danger" style="text-align: center;">Player Listing</h1>
+ 
+    <hr />
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Age</th>
+            <th>TeamID</th>
+            <th>Bidding Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of players">
+                <td>{{p.name}}</td>
+                <td>{{p.age}}</td>
+                <td>{{p.teamId}}</td>
+                <td>{{p.biddingPrice}}</td>
+                <!-- <td>
+                    <a [routerLink] = "['/find/',m.id]">Details</a>
+                </td> -->
+                <td>
+                   <button class="btn btn-primary btn-sm" [routerLink] = "['/editplayer/',p.id]">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary btn-sm" [routerLink] = "['/delete/',p.id]">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+ 
+    </table>
+</div>
