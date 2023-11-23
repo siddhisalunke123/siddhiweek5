@@ -6,8 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { ListPlayersComponent } from './list-players/list-players.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
+  {path:'',component:MenuComponent},
   {path:"home",component:HomeComponent},
   {path:"addteam",component:AddTeamComponent},
   {path:"addplayer",component:AddPlayersComponent},

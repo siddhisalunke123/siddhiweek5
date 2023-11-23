@@ -21,6 +21,7 @@ import { PlayerComponent } from './player/player.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { PlayerComponent } from './player/player.component';
     ListPlayersComponent,
     ListTeamComponent,
     MenuComponent,
-    PlayerComponent
+    PlayerComponent,
+
    
     
   ],
