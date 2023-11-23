@@ -7,10 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayerComponent } from './player/player.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent
+    PlayerComponent,
+   
     
   ],
   imports: [
