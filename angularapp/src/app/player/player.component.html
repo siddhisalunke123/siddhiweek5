@@ -1,24 +1,32 @@
-[7:36 PM] Rudrani Basvrajappa Rode
-<div>
-    <table>
-        <thead>
-            <th>Player ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Category</th>
-            <th>Bidding Price</th>
-        </thead>
-        <tbody>
-            <ul *ngFor="let p of players">
-                <li>{{p.id}}</li>
-                <li>{{p.name}}</li>
-                <li>{{p.age}}</li>
-                <li>{{p.category}}</li>
-                <li>{{p.biddingprice}}</li>
-                <li><button type="submit">edit</button>
-                <button type="submit">delete</button></li>
+<h3>Player List</h3>
+<table class="table">
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+    <th>category</th>
+    <th>id</th>
+    <th>BiddingPrice</th>
  
-            </ul>
-        </tbody>
-    </table>
-</div>
+    <tr *ngFor="let m of players">
+        <td>{{m.id}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.age}}</td>
+        <td>{{m.category}}</td>
+        <td>{{m.teamId}}</td>
+        <td>{{m.biddingPrice}}</td>
+        <td><a [routerLink]="['/editplayer/',m.id]">EDIT</a></td>
+       
+ 
+ 
+        <td><a [routerLink]="['/playerbyid/',m.id]">Details</a></td>
+        <td><a [routerLink]="['/deleteplayer/',m.id]">DELETE</a></td>
+    </tr>
+</table>
+ 
+<td><a routerLink="/addplayer">ADD</a></td>
+<li>
+    <button>Edit</button>
+    <button>Delete</button>
+</li>
+
+<!-- <p id="playerBiddingPrice">{{newPlayer.biddingPrice}}</p> -->
