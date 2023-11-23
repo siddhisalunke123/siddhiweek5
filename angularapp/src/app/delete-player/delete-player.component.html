@@ -1,1 +1,12 @@
-<p>delete-player works!</p>
+<!-- <h2>Deleting {{playerdata.name}}</h2> -->
+
+<div>
+    Name: {{playerdata.name}}
+    ID :  {{playerdata.id}}
+    Age:  {{playerdata.age}}
+    Category:{{playerdata.category}}
+
+    <p>
+        <button type="submit" (click)="onDelete()">Delete</button>
+    </p>
+</div>
