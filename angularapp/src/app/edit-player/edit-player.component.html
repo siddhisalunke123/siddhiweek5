@@ -1,24 +1,20 @@
- 
+<p>edit-player works!</p>
+
+
 <div>
- 
-    <form (ngSubmit)="onSave(playerdata)" #playerform="ngForm">
- 
+
+    <form  (ngSubmit)="onSave(playerdata)" #playerform="ngForm">
+
         <div>
- 
+
             <label for="name">Name</label>
             <input id="name" type="text" name="name" class="form-control" [(ngModel)]="playerdata.name" >
-   
+    
         </div>
         <!-- <div >
             <label for="teamID">Team ID</label>
             <input type="text" id="teamID" name="teamID"  class="form-control"[(ngModel)]="playerdata.teamID">
         </div>    -->
-
-        <div>
-            <label for="age">Category</label>
-            <input type="text" id="age" name="age" class="form-control" [(ngModel)]="playerdata.age">
-        </div>
-
         <div>
             <label for="category">Category</label>
             <input type="text" id="category" name="category" class="form-control" [(ngModel)]="playerdata.category">
@@ -27,7 +23,7 @@
             <label for="biddingPrice">Bidding Price</label>
             <input type="text" id="biddingPrice" name="biddingPrice" class="form-control" [(ngModel)]="playerdata.biddingPrice">
         </div>
- 
-        <button class="btn btn-success" type="submit">Edit</button>
+
+        <button class="btn btn-success" type="submit">Edit TEAM</button>
     </form>
 </div>
