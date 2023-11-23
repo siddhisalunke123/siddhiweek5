@@ -6,13 +6,11 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayerComponent } from './player/player.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent,
-    LoginComponent,
+    PlayerComponent
     
   ],
   imports: [
